@@ -1,2 +1,2 @@
 # Exercicios
-Exercicios bootcamp
+Exercicios bootcamp New Rizon!
