@@ -1,16 +1,15 @@
-
 //Alternativa A - Exemplo de uma palavra recebida via parâmetro da função
-function ContarVogais(palavra: string){
-    let qtdVogais = 0;
-    const vogais = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-    for (let i = 0; i < palavra.length; i++) {
-        if (vogais.includes(palavra[i])) {
-            qtdVogais++;
-        }
-    }
-    return qtdVogais;
+function contarVogais(palavra: string): number {
+    const palavraMinuscula : string = palavra.toLowerCase();
+    const vogais: RegExp = /[aeiouáàâãéêíóôõúü]/gi; // Regex para vogais englobando vogais com acentos
+    const vogaisEncontradas: string[] | null = palavraMinuscula.match(vogais);
+
+    return vogaisEncontradas ? vogaisEncontradas.length : 0;
+
 }
-console.log(ContarVogais("Orion Bootcamp")); // Palavra passada por parâmetro da função
+
+const palavra : string = "Bootcamp";
+console.log(contarVogais(palavra))
 
 
 
@@ -21,7 +20,7 @@ const resultado = document.querySelector(".resultado") as HTMLDivElement;
 
 button.addEventListener('click', (index: Event) => {
     index.preventDefault();
-    const palavra = palavraInput.value;
-    let qtdVogais = ContarVogais(palavra);
+    const palavra: string = palavraInput.value;
+    let qtdVogais: number = contarVogais(palavra);
     resultado.textContent = `A palavra ${palavra} possui ${qtdVogais} vogais`;
 });
