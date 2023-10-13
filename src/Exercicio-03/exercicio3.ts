@@ -41,7 +41,7 @@ function exibirPessoas() {
             const pessoaCard = document.createElement("div");
             pessoaCard.classList.add("pessoa-card");
             pessoaCard.innerHTML = `
-                <p>ID: ${pessoa.id}</p>
+                <h3>ID: ${pessoa.id}</h3>
                 <h4>${pessoa.name}</h4>
                 <p>Biografia: ${pessoa.bio}</p>
             `;
@@ -118,6 +118,49 @@ buttonData.addEventListener('click', (event: Event) => {
     removePessoaPorID(id);
 });
 
+
+const buttonChange = document.querySelector("#buttonChange") as HTMLButtonElement;
+const changeList = document.querySelector("#changeList") as HTMLInputElement;
+const nameOrBio = document.querySelector("#nameOrBio") as HTMLSelectElement;
+const newContent = document.querySelector("#newContent") as HTMLInputElement;
+const resultExercise = document.querySelector(".resultExercise") as HTMLParagraphElement;
+const pessoaCard = document.querySelectorAll(".pessoa-card");
+
+
+//Função para alterar bio ou nome
+function alterarBioOuNome(id: number, propriedade: string, novoConteudo: string): void {
+    const itemIndex = lista.findIndex((item) => item.id === id);
+
+    if (itemIndex === -1) {
+        resultExercise.textContent = "ID não encontrado.";
+        return;
+    }
+
+    const item = lista[itemIndex];
+    const pessoaCardElement = pessoaCard[itemIndex];
+
+    if (propriedade === "name") {
+        item.name = novoConteudo;
+        pessoaCardElement.querySelector("h4")!.textContent = novoConteudo;
+    } else if (propriedade === "bio") {
+        item.bio = novoConteudo;
+        const paragrafoBiografia = pessoaCardElement.querySelector("p");
+        if (paragrafoBiografia) {
+            paragrafoBiografia.textContent = `Biografia: ${novoConteudo}`;
+        }
+    }
+
+    resultExercise.textContent = "Alterações feitas.";
+}
+
+buttonChange.addEventListener('click', (event: Event) => {
+    event.preventDefault();
+    const id: number = parseInt(changeList.value, 10);
+    const propriedade: string = nameOrBio.value;
+    const novoConteudo: string = newContent.value;
+
+    alterarBioOuNome(id, propriedade, novoConteudo);
+});
 
 
 
