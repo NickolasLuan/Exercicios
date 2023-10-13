@@ -94,6 +94,7 @@ buttonBio.addEventListener('click', (index:Event) => {
     obterBioPeloId(id)
 })
 
+
 //Função para remover uma pessoa da lista
 function removePessoaPorID(id: number): void {
     const pessoaCard = document.querySelectorAll(".pessoa-card");
@@ -116,6 +117,7 @@ buttonData.addEventListener('click', (event: Event) => {
     const id: number = parseInt(idlist.value, 10);
     removePessoaPorID(id);
 });
+
 
 
 

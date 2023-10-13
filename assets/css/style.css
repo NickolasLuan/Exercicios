@@ -27,7 +27,8 @@ body {
   }
   
   
-  input {
+  input,select {
+    display: flex;
     border: 1px solid #ccc;
     border-radius: 3px;
     width: 50%;
@@ -107,4 +108,12 @@ body {
 .exercicio02 label {
     margin-top: 2rem;
     margin-bottom: 0;
+}
+
+.exercicio02 #nameOrBio {
+  display: block;
+  width: 51.6%;
+  height: 33px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
 }
