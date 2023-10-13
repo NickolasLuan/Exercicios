@@ -11,22 +11,31 @@
     <div class="container">
         <h2>Ex 1 - Contar Vogais</h2>
 
-        <form>
-        <label for="">Insira uma palavra para contar as vogais:</label>
-        <input type="text" id="palavra" required>
-
-        <button class="button">Contar vogais</button>
-        <p class="resultado"></p>
+        <form class="exercicio01">
+            <label for="">Insira uma palavra para contar as vogais:</label>
+            <input type="text" id="palavra" required placeholder="Digite uma palavra">
+            <button class="button">Contar vogais</button>
+            <p class="resultado"></p>
         </form>
 
-        <h2>Ex 2 - Cientistas famosos</h2>
-        <div id="pessoasList">
-        </div>
+        <hr>
 
+        <h2>Ex 2 - Cientistas famosos</h2>
+        <div id="pessoasList"></div>
+
+        <hr>
+
+        <form class="exercicio02">
+            <label for="id">ID:</label>
+            <input type="number" id="number" required placeholder="Digite um ID">
+
+            <button class="button" id="buttonBio">Mostrar bio</button>
+            <button class="button" id="buttonName">Mostrar name</button>
+            <button class="button" id="buttonData">Alterar dados</button>
+            <p class="resultadoExercicio2"></p>
+        </form>
     </div>
         
-        
-    
     <footer>Desenvolvido por <a href="https://www.linkedin.com/in/nickolas-luan27/" target="_blank">Nickolas Luan</a></footer>
 
     <script src="./dist/Exercicio-03/exercicio3.js"></script>

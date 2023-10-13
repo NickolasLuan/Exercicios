@@ -49,6 +49,7 @@ body {
     margin-top: 1rem;
     transition: 300ms;
     margin-bottom: 1em;
+    opacity: 0.8;
   }
   
   
@@ -59,30 +60,32 @@ body {
   
   
   footer {
-  position: fixed;
   bottom: 0;
   left: 0;
   padding: 20px;
   width: 100%;
   text-align: center;
-  
+
   }
   
   a {
   text-decoration: none
   
   }
+
   
   p {
     word-wrap: break-word;
     display: flex;
   
   }
+
   
   .resultado {
     margin: 0;
    margin-bottom: 4%;
   }
+
 
   hr {
         border: 0; 
@@ -90,10 +93,18 @@ body {
         opacity: 0.1;
   }
 
+
   .pessoa-card {
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 10px;
+    margin-left: 2px;
+    margin-bottom: 10px;
     padding: 10px;
+    
     background-color: #f0f0f0;
+}
+
+.exercicio02 label {
+    margin-top: 2rem;
+    margin-bottom: 0;
 }
