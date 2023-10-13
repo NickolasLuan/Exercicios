@@ -54,6 +54,7 @@ function exibirPessoas() {
 exibirPessoas();
 
 const buttonName = document.querySelector("#buttonName") as HTMLButtonElement;
+const buttonData = document.querySelector("#buttonData") as HTMLButtonElement;
 const buttonBio = document.querySelector("#buttonBio") as HTMLButtonElement;
 const resultExercise2 = document.querySelector(".resultExercise2") as HTMLParagraphElement;
 const idlist = document.querySelector("#idlist") as HTMLInputElement;
@@ -92,5 +93,29 @@ buttonBio.addEventListener('click', (index:Event) => {
     const id: number = parseInt(idlist.value, 10);
     obterBioPeloId(id)
 })
+
+//Função para remover uma pessoa da lista
+function removePessoaPorID(id: number): void {
+    const pessoaCard = document.querySelectorAll(".pessoa-card");
+
+    const removerPessoaIndex = lista.findIndex((pessoa) => pessoa.id === id);
+
+    if (removerPessoaIndex !== -1) {
+        pessoaCard[removerPessoaIndex].remove();
+
+        // Remove a pessoa da lista
+        lista.splice(removerPessoaIndex, 1);
+        resultExercise2.textContent = `Pessoa com ID ${id} foi removido(a).`;
+    } else {
+        resultExercise2.textContent = "Pessoa não encontrada.";
+    }
+}
+
+buttonData.addEventListener('click', (event: Event) => {
+    event.preventDefault();
+    const id: number = parseInt(idlist.value, 10);
+    removePessoaPorID(id);
+});
+
 
 
