@@ -54,6 +54,7 @@ function exibirPessoas() {
 exibirPessoas();
 
 const buttonName = document.querySelector("#buttonName") as HTMLButtonElement;
+const buttonBio = document.querySelector("#buttonBio") as HTMLButtonElement;
 const resultExercise2 = document.querySelector(".resultExercise2") as HTMLParagraphElement;
 const idlist = document.querySelector("#idlist") as HTMLInputElement;
 
@@ -74,5 +75,22 @@ buttonName.addEventListener('click', (index:Event) => {
     obterNamePeloId(id)
 })
 
+
+//Função para exibir a Bio a partir de um id
+function obterBioPeloId(id: number): void {
+    const pessoaEncontrada = lista.find((pessoa) => pessoa.id === id);
+
+    if (pessoaEncontrada) {
+        resultExercise2.textContent = pessoaEncontrada.bio;
+    } else {
+        resultExercise2.textContent = "ID não encontrado.";
+    }
+}
+
+buttonBio.addEventListener('click', (index:Event) => {
+    index.preventDefault();
+    const id: number = parseInt(idlist.value, 10);
+    obterBioPeloId(id)
+})
 
 
