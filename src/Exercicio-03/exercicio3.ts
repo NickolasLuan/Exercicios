@@ -34,4 +34,22 @@ button.addEventListener('click', (index: Event) => {
     }
 });
 
+function exibirPessoas() {
+    const pessoasList = document.getElementById("pessoasList");
+    if (pessoasList) {
+        lista.forEach((pessoa) => {
+            const pessoaCard = document.createElement("div");
+            pessoaCard.classList.add("pessoa-card");
+            pessoaCard.innerHTML = `
+                <p>ID: ${pessoa.id}</p>
+                <h4>${pessoa.name}</h4>
+                <p>Biografia: ${pessoa.bio}</p>
+            `;
+            pessoasList.appendChild(pessoaCard);
+        });
+    }
+}
+
+// Chame a função para exibir as pessoas
+exibirPessoas();
 
