@@ -53,5 +53,26 @@ function exibirPessoas() {
 // Chame a função para exibir as pessoas
 exibirPessoas();
 
+const buttonName = document.querySelector("#buttonName") as HTMLButtonElement;
+const resultExercise2 = document.querySelector(".resultExercise2") as HTMLParagraphElement;
+const idlist = document.querySelector("#idlist") as HTMLInputElement;
+
+//Função para exibir o name a partir de um id
+function obterNamePeloId(id: number): void {
+    const pessoaEncontrada = lista.find((pessoa) => pessoa.id === id);
+
+    if (pessoaEncontrada) {
+        resultExercise2.textContent = pessoaEncontrada.name;
+    } else {
+        resultExercise2.textContent = "ID não encontrado.";
+    }
+}
+
+buttonName.addEventListener('click', (index:Event) => {
+    index.preventDefault();
+    const id: number = parseInt(idlist.value, 10);
+    obterNamePeloId(id)
+})
+
 
 
