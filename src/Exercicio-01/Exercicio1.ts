@@ -1,5 +1,5 @@
 //Alternativa A - Exemplo de uma palavra recebida via parâmetro da função
-function contarVogais(palavra: string): number {
+export function contarVogais(palavra: string): number {
     const palavraMinuscula : string = palavra.toLowerCase();
     const vogais: RegExp = /[aeiouáàâãéêíóôõúü]/gi; // Regex para vogais englobando vogais com acentos
     const vogaisEncontradas: string[] | null = palavraMinuscula.match(vogais);

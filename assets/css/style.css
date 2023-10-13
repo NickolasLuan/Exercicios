@@ -1,12 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,700&display=swap');
-
-
-* {
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(249, 248, 248);
+  }
   
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  
+  .container {
+    background-color: rgb(255, 255, 255);
+    width: 900px;
+    border: 1px solid  #ccc ;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 30px;
+    /**display: flex;**/
+  
+  }
+  
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    
+  }
+  
+  
+  input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 50%;
+    height: 20px;
+    padding: 6px;
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
+  
+  }
+  
+  
+  button {
+    border: none;
+    height: 35px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgb(26, 24, 122);
+    color: white;
+    margin-top: 1rem;
+    transition: 300ms;
+    margin-bottom: 1em;
+  }
+  
+  
+  button:hover {
+  background-color: rgb(40, 38, 163);
+  
+  }
+  
+  
+  footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  
+  }
+  
+  a {
+  text-decoration: none
+  
+  }
+  
+  p {
+    word-wrap: break-word;
+    display: flex;
+  
+  }
+  
+  .resultado {
+    margin: 0;
+   margin-bottom: 4%;
+  }
 
+  hr {
+        border: 0; 
+        border-top: 1px solid black; 
+        opacity: 0.1;
+  }
+
+  .pessoa-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
 }
-
-
