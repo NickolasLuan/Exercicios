@@ -31,16 +31,16 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Install Dependencies
-        run: npm install  
+        run: npm install  # Ou o gerenciador de pacotes que você usa
 
       - name: Build
-        run: npm run build  
+        run: npm run build  # Certifique-se de que este comando gera os arquivos na pasta "dist" (por exemplo, usando npx tsc)
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: dist
-          path: dist
+          path: dist  # Substitua pelo caminho correto, se necessário
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
